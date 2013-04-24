@@ -8,61 +8,148 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-09 04:13-0300\n"
+"POT-Creation-Date: 2013-04-24 16:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: models.py:32
+#: forms.py:34
+#, python-format
+msgid ""
+"%(ext)s is an invalid file extension. Authorized extensions are : "
+"%(valid_exts_list)s"
+msgstr ""
+"%(ext)s es una extensión de fichero inválida. Las extensiones autorizadas son: "
+"%(valid_exts_list)s"
+
+#: forms.py:38
+#, python-format
+msgid ""
+"Your file is too big (%(size)s), the maximum allowed size is "
+"%(max_valid_size)s"
+msgstr ""
+"El fichero es demasiado grande (%(size)s), el tamaño máximo permitido es "
+"%(max_valid_size)s"
+
+#: forms.py:44
+#, python-format
+msgid ""
+"You already have %(nb_avatars)d avatars, and the maximum allowed is "
+"%(nb_max_avatars)d."
+msgstr ""
+"Usted actualmente tiene %(nb_avatars)d fotos de perfil, el máximo permitido es de "
+"%(nb_max_avatars)d."
+
+
+#: models.py:76
 #, python-format
 msgid "Avatar for %s"
 msgstr "Avatar para %s"
 
-#: views.py:68
+#: views.py:72
 msgid "Successfully uploaded a new avatar."
 msgstr "Nueva foto del perfil enviada exitosamente."
 
-#: views.py:76
+#: views.py:109
 msgid "Successfully updated your avatar."
 msgstr "Su foto de perfil fue actualizada con éxito."
 
-#: views.py:114
+#: views.py:145
 msgid "Successfully deleted the requested avatars."
 msgstr "Las fotos de perfil seleccionadas fueron eliminadas con éxito."
 
-#: management/__init__.py:9
-msgid "Avatar Updated"
-msgstr "Foto de Perfil Actualizada"
+#: templates/avatar/add.html:5 templates/avatar/change.html:5
+msgid "Your current avatar: "
+msgstr "Su foto de perfil actual:"
 
-#: management/__init__.py:9
-msgid "avatar have been updated"
-msgstr "foto de perfil actualizada"
+#: templates/avatar/add.html:8 templates/avatar/change.html:8
+msgid "You haven't uploaded an avatar yet. Please upload one now."
+msgstr "No ha subido una foto de perfil todavía. Por favor suba una ahora."
 
-#: management/__init__.py:10
-msgid "Friend Updated Avatar"
-msgstr "Amigo actualizó su foto del perfil"
+#: templates/avatar/add.html:12 templates/avatar/change.html:19
+msgid "Upload New Image"
+msgstr "Subir una nueva imagen"
 
-#: management/__init__.py:10
-msgid "a friend has updated his avatar"
-msgstr "un amigo actualizó su foto del perfil"
+#: templates/avatar/change.html:14
+msgid "Choose new Default"
+msgstr "Seleccione nueva imagen por defecto"
 
-#: templates/notifications/avatar_friend_updated/notice.html:2
+#: templates/avatar/confirm_delete.html:5
+msgid "Please select the avatars that you would like to delete."
+msgstr "Por favor seleccione las fotos de perfil que quiere borrar."
+
+#: templates/avatar/confirm_delete.html:8
 #, python-format
 msgid ""
-"<a href=\"%(user_url)s\">%(avatar_creator)s</a> has updated his avatar <a "
+"You have no avatars to delete. Please <a href=\"%(avatar_change_url)s"
+"\">upload one</a> now."
+msgstr ""
+"No tiene fotos de perfil para borrar. Por favor <a href=\"%(avatar_change_url)s"
+"\">suba una</a> ahora."
+
+#: templates/avatar/confirm_delete.html:14
+msgid "Delete These"
+msgstr "Borrar esos"
+
+#: templates/notification/avatar_friend_updated/full.txt:1
+#, python-format
+msgid ""
+"%(avatar_creator)s has updated their avatar %(avatar)s.\n"
+"\n"
+"http://%(current_site)s%(avatar_url)s\n"
+msgstr ""
+"%(avatar_creator)s ha actualizado su foto de perfil %(avatar)s.\n"
+"\n"
+"http://%(current_site)s%(avatar_url)s\n"
+
+#: templates/notification/avatar_friend_updated/notice.html:2
+#, fuzzy, python-format
+msgid ""
+"<a href=\"%(user_url)s\">%(avatar_creator)s</a> has updated their avatar <a "
 "href=\"%(avatar_url)s\">%(avatar)s</a>."
 msgstr ""
-"<a href=\"%(user_url)s\">%(avatar_creator)s</a> actaulizó su foto de perfil <a "
-"href=\"%(avatar_url)s\">%(avatar)s</a>."
+"<a href=\"%(user_url)s\">%(avatar_creator)s</a> actualizó su foto de perfil "
+"<a href=\"%(avatar_url)s\">%(avatar)s</a>."
 
-#: templates/notifications/avatar_updated/notice.html:2
+#: templates/notification/avatar_updated/full.txt:1
 #, python-format
-msgid "A new tribe <a href=\"%(avatar_url)s\">%(avatar)s</a> has been created."
-msgstr "Una nueva foto de perfil <a href=\"%(avatar_url)s\">%(avatar)s</a> fue creada."
+msgid ""
+"Your avatar has been updated.  %(avatar)s\n"
+"\n"
+"http://%(current_site)s%(avatar_url)s\n"
+msgstr ""
+"Su foto de perfil ha sido actualizada.  %(avatar)s\n"
+"\n"
+"http://%(current_site)s%(avatar_url)s\n"
 
-#: templatetags/avatar_tags.py:47
+#: templates/notification/avatar_updated/notice.html:2
+#, fuzzy, python-format
+msgid "You have updated your avatar <a href=\"%(avatar_url)s\">%(avatar)s</a>."
+msgstr "Ha actualizado su foto de perfil <a href=\"%(avatar_url)s\">%(avatar)s</a>."
+
+
+#: templatetags/avatar_tags.py:48
 msgid "Default Avatar"
 msgstr "Foto de perfil por defecto"
+
+#~ msgid "Avatar Updated"
+#~ msgstr "Foto de Perfil Actualizada"
+
+#~ msgid "avatar have been updated"
+#~ msgstr "foto de perfil actualizada"
+
+#~ msgid "Friend Updated Avatar"
+#~ msgstr "Amigo actualizó su foto del perfil"
+
+#~ msgid "a friend has updated his avatar"
+#~ msgstr "un amigo actualizó su foto del perfil"
+
+#~ msgid ""
+#~ "A new tribe <a href=\"%(avatar_url)s\">%(avatar)s</a> has been created."
+#~ msgstr ""
+#~ "Una nueva foto de perfil <a href=\"%(avatar_url)s\">%(avatar)s</a> fue "
+#~ "creada."
